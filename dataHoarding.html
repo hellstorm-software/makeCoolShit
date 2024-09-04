@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Hoarding - Make Cool Shit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+		<div class="info-bar" style="margin-right: 94%; text-align: left;">
+			<a href="makeCoolShit.html"><p>HOME</p></a>
+			<a href=""><p>DISCORD</p></a>
+			<a href=""><p>GITHUB</p></a>
+			<a href=""><p>NEWSLETTER</p></a>
+		</div>
+		<div class="info-bar">
+			<p>Welcome to The Grid™.</p>
+			<p>We hope you enjoy your stay.</p>
+			<p>SXLAR WASTELAND OFFICIAL WEBSITE</p>
+			<br>
+			<p id="current-time">4:20PM</p>
+			<p id="cursor-position">1001 / 114</p>
+		</div>
+
+		<div class ="bannerBox" style="width: 60%; height: 40%; margin-left: 18%; margin-top: 2%;">
+			<h2>Overview</h2>
+			<p style="text-align: left; margin-left: 10px; margin-right: 10px;">
+				Data Hoarding (sometimes referred to as digital hoarding) is the practice of collecting, storing, and archiving digital assets and media usually for the purpose of preservation. While the common addage "what you post online
+				is permanent rings true 99% of the time, lost media absolutely does exist, and sometimes things just dissapear. The obvious source of this is small/niche commmunities revolving around a certain artist, musician, show, or other
+				piece of obscure media, but this isn't the only data that falls victim to dissapearance. Moist Cr1tikal has talked many times about his original youtube videos that he made when he first started his channel and how he'd love to
+				have those videos. And yet dispite his search for the past however many years, as well as the help of his community which is millions deep, his frist videos remain lost media.
+			<br><br>
+				Because of this, <a style="color: #a3a3a3" href="https://www.reddit.com/r/DataHoarder/">many people</a> have taken to becoming what are known as "Data Hoarders." Archiving, and indexing massive ammounts of data just on the off chance that the media dissapears
+				one day. <a style="color: #a3a3a3" href="https://web.archive.org">The Internet Archive</a> is probably the largest and well known example of data hoarding however, individuals and their own personal libraries are still immeasurably valubale, both as a source to 
+				add to the internet archive, but also to act as a decentralized backup for it, as the Internet Archive has faced copyright threats many times over its lifespan. 
+			</p>
+		</div>
+		
+		<div class ="bannerBox" style="width: 60%; height: 40%; margin-left: 18%; margin-top: 2%;">
+			<h2>Getting Started</h2>
+			<p style="text-align: left; margin-left: 10px; margin-right: 10px;">
+				Getting started with "archiving all the media you like" can definitely seem like a daunting task, so here's a simple way to get started. It's a simple script you can setup to automatically download youtube videos from a playlist
+				at a customizable interval, meaning you can link either your liked videos playlist or a custom "backup" playlist, and then on a weekly basis, the script will automatically back up any videos from that playlist that haven't been
+				downloaded already.
+			<br><br>
+				To get started download <a style="color: #a3a3a3" href="https://github.com/yt-dlp/yt-dlp#installation">yt-dlp from github</a>, and download the latest exe file. Then open your command prompt (press start and type in cmd) and type
+				"yt-dlp --version" to verify the file is installed correctly. Next open a text editor like notepad or notepad++ and paste the following script:
+			<br><br>
+				<code>
+					@echo off
+					<br>:: Set the download directory (modify this to your preferred directory)
+					<br>set "DOWNLOAD_DIR=M:\YT\%%(channel)s\%%(title)s.%%(ext)s"
+
+					<br>:: Set the playlist URL (replace the placeholder with your playlist link)
+					<br>set "PLAYLIST_URL=https://www.youtube.com/yourplaylistlinkhere"
+
+					<br>:: Run yt-dlp to download new videos
+					<br>yt-dlp.exe -f "bestvideo+bestaudio/best" -o "%DOWNLOAD_DIR%" --download-archive archive.txt "%PLAYLIST_URL%"
+
+					<br>:: Exit the script
+					<br>exit
+					</code>
+			<br><br>
+				This is what's known as a batch file, and is a script used to run commands in a specific order inside of windows. All of the lines that start with "::" are comments and explain what each corresponding line of 
+				code does. To save it make sure you set the file to "All files" (or select batch file if you're using notepad++) and save it with any name, ending the file with .bat (you don't need to do this with notepad++ as 
+				selecting batch file will set the extension automatically). Giving you a file that looks like "youtubeDownloader.bat"
+			</p>
+		</div>
+    <script src="script.js"></script>
+</body>
+</html>
